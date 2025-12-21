@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-image: url("portfolio2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: top;
+  color: midnightblue;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: crimson;
+}
+
+/* ---------- HERO ---------- */
+header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: transparent;
+  animation: fadeIn 1.5s ease forwards;
+  color: midnightblue;
+}
+
+header h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  animation: slideDown 1.2s ease;
+}
+
+header p {
+  margin-top: 0.7rem;
+  color: midnightblue;
+  animation: slideUp 1.2s ease;
+}
+
+nav {
+  margin-top: 2rem;
+  animation: fadeIn 2s ease;
+}
+
+nav a {
+  margin: 0 14px;
+  font-weight: 500;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background: midnightblue;
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ---------- SECTIONS ---------- */
+section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 5rem 1.5rem;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s ease;
+}
+
+section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  border-left: 5px solid crimson;
+  padding-left: 12px;
+}
+
+/* ---------- CARDS ---------- */
+.card {
+  background: transparent;
+  backdrop-filter: blur(3px);
+  padding: 1.8rem;
+  border-radius: 16px;
+  box-shadow: 1px 7px 10px rgba(0, 0, 0, 0.45);
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+}
+
+/* ---------- GRID ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* ---------- SKILLS ---------- */
+.skills span {
+  display: inline-block;
+  background: transparent;
+  backdrop-filter: blur(50px);
+  border: 1px solid midnightblue;
+  padding: 8px 16px;
+  border-radius: 30px;
+  margin: 8px 8px 0 0;
+  font-size: 0.95rem;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.skills span:hover {
+  transform: scale(1.1);
+  background: midnightblue;
+  color: white;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: transparent;
+  backdrop-filter: blur(2px);
+  color: #94a3b8;
+}
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
